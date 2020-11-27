@@ -16,7 +16,7 @@ class App extends Component {
                 <img src={logo} width="20" />
               </td>
               <td>
-                New Today!!
+              <a href="index.html">New Today!!</a>
               </td>
             </tr>
           </tbody>
