@@ -9,7 +9,6 @@ export default class NewsList extends React.Component {
 
     componentDidMount() {
         axios.get('https://agile-cliffs-83142.herokuapp.com/api/news').then(res => {
-            console.log(res);
             this.setState({ news: res.data });
         })
     }
