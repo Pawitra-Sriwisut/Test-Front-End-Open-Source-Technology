@@ -1,31 +1,12 @@
 import React, { Component } from 'react';
-import { Table, Button } from 'reactstrap';
+import { Table} from 'reactstrap';
 import logo from './pic/logotype.svg'
-import axios from 'axios'
 
 import './App.css'
 import NewsList from './component/NewsList';
 
 class App extends Component {
-
-  state = {
-    news: []
-  }
-
-  componentWillUnmount() {
-    axios.get('https://agile-cliffs-83142.herokuapp.com/api/news').then(response => {
-      this.setState({
-        news: response.data
-      })
-    })
-  }
-
   render() {
-    let news = this.state.news.map((newss) => {
-      return (
-        <h1>{newss.title}</h1>
-      )
-    })
     return (
       <div className="App container">
         <Table className="Navbar">
@@ -39,8 +20,9 @@ class App extends Component {
               </td>
             </tr>
           </tbody>
-          </Table>
-          <NewsList />
+        </Table>
+        <NewsList />
+
       </div>
     );
   }
